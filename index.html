@@ -9,7 +9,7 @@
 SELECT title, max(stars) as starMayor
 FROM movie, rating
 WHERE movie.mID = rating.mid
-GROUP by title
+GROUP by <title></title>
 ORDER by title
  
 
@@ -17,7 +17,7 @@ ORDER by title
 FROM Movie, Rating 
 WHERE Movie.mID = Rating.mID
 GROUP BY Movie.mID, title
-ORDER BY promedio DESC</p>
+ORDER BY promedio,title DESC</p>
 <br>
 <br>
 <p>
