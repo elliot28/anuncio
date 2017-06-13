@@ -6,19 +6,28 @@
 <p>Para la clase del 13 de junio de 2017</p>
 <p>CCOM4401</p>
 
-SELECT title, AVG(stars) AS promedio
+SELECT title, max(stars) as starMayor
+FROM movie, rating
+WHERE movie.mID = rating.mid
+GROUP by title
+ORDER by title
+ 
+
+<p>SELECT title, AVG(stars) AS promedio
 FROM Movie, Rating 
 WHERE Movie.mID = Rating.mID
 GROUP BY Movie.mID, title
-ORDER BY promedio DESC
-
+ORDER BY promedio DESC</p>
+<br>
+<br>
+<p>
 SELECT title
 FROM movie
 WHERE title NOT IN(
 SELECT title
 FROM movie, reviewer, rating
 WHERE rating.rID = reviewer.rID AND movie.mID = rating.mID AND
-reviewer.name = 'Mike Anderson')
+reviewer.name = 'Mike Anderson')</p>
 
 
 
