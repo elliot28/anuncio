@@ -6,5 +6,20 @@
 <p>Para la clase del 13 de junio de 2017</p>
 <p>CCOM4401</p>
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/r8Ew3oIp_Cs" frameborder="0" allowfullscreen></iframe></body>
+SELECT title, AVG(stars) AS promedio
+FROM Movie, Rating 
+WHERE Movie.mID = Rating.mID
+GROUP BY Movie.mID, title
+ORDER BY promedio DESC
+
+SELECT title
+FROM movie
+WHERE title NOT IN(
+SELECT title
+FROM movie, reviewer, rating
+WHERE rating.rID = reviewer.rID AND movie.mID = rating.mID AND
+reviewer.name = 'Mike Anderson')
+
+
+
 </html>
